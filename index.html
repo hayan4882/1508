@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--
+  Infographic Title: Generative AI Usage Report - Student Survey
+  Date Generated: 2025-05-30
+  Data Source: Student co-investigation report
+  Key Technologies: HTML, Tailwind CSS, Chart.js (from TypeScript concepts)
+-->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성형 AI, 어떻게 사용하고 있을까? – 실태와 생각을 담은 보고서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F4F7F9; /* Light Background */
+            color: #263238; /* Dark Text */
+        }
+        .chart-container {
+            position: relative;
+            margin: auto;
+            /* height attribute will be set by Tailwind classes */
+        }
+        /* Custom Chart.js Tooltip Styles (Optional) */
+        .chartjs-tooltip {
+            opacity: 1;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 3px;
+            padding: 6px 8px;
+            font-size: 0.875rem;
+            pointer-events: none;
+            transition: all .1s ease;
+            z-index: 10;
+        }
+        .chartjs-tooltip-key {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+        h1, h2, h3 {
+            color: #2A62B6; /* Primary Blue */
+        }
+        .section-card {
+            background-color: #FFFFFF; /* Light Background for cards */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            padding: 1.5rem; /* p-6 */
+        }
+        @media (min-width: 768px) {
+            .section-card {
+                padding: 2rem; /* md:p-8 */
+            }
+        }
+        .text-secondary-teal { color: #4ECDC4; }
+        .bg-supporting-light-blue { background-color: #E0F2FE; }
+        .border-accent-grey { border-color: #A9A9A9; }
+
+        /* Helper for breaking long labels in Chart.js */
+        .chart-label-newline-helper {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-primary-blue py-8 px-4 text-center text-white rounded-b-xl shadow-md" style="background-color: #2A62B6;">
+        <div class="container mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2">생성형 AI, 어떻게 사용하고 있을까?</h1>
+            <p class="text-xl md:text-2xl font-light mb-4">– 실태와 생각을 담은 보고서 –</p>
+            <div class="text-sm text-gray-200">
+                <p>미림마이스터고 1학년 5반 2조</p>
+                <p class="mt-1">국다인, 나는야 지우귀요미, 전서연, 박하얀얀, 조은애</p>
+                <p class="mt-2">작성일: 2025년 5월 29일</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        <section id="investigation-overview" class="my-8">
+            <div class="section-card">
+                <h2 class="text-2xl font-bold mb-6 text-center">1. 조사 개요</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-supporting-light-blue p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-secondary-teal">조사 동기</h3>
+                        <p class="text-sm leading-relaxed">학급 내 AI 사용 현황과 친구들이 어떤 AI를 주로 사용하고 어떤 점에서 편리함을 느끼는지 알아보고자 했습니다. 다양한 AI가 등장하는 시대에 가장 효율적인 AI를 파악하여 과제 수행에 도움을 얻고 싶었습니다.</p>
+                    </div>
+                    <div class="bg-supporting-light-blue p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-3 text-secondary-teal">조사 목적</h3>
+                        <p class="text-sm leading-relaxed">미림마이스터고 1학년 5반 학생들이 어떤 생성형 AI를 가장 많이 사용하고, 그 이유는 무엇인지 파악하고자 했습니다. 주로 활용하는 AI의 장단점 및 사용 동기를 분석하는 데 목적을 두었습니다.</p>
+                    </div>
+                </div>
+                <div class="mt-6 border-t border-accent-grey pt-6">
+                    <h3 class="text-xl font-semibold mb-3 text-center text-secondary-teal">조사 계획</h3>
+                    <div class="flex flex-col md:flex-row justify-around items-center text-center space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="p-4 rounded-md">
+                            <p class="font-medium text-lg">조사 대상</p>
+                            <p class="text-sm">미림마이스터고 1학년 5반 학생 18명</p>
+                        </div>
+                        <div class="p-4 rounded-md">
+                            <p class="font-medium text-lg">조사 기간</p>
+                            <p class="text-sm">2025년 5월 13일 ~ 5월 20일 (2주간)</p>
+                        </div>
+                        <div class="p-4 rounded-md">
+                            <p class="font-medium text-lg">조사 방법</p>
+                            <p class="text-sm">설문조사 (객관식 문항)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="survey-results" class="my-8">
+            <h2 class="text-2xl font-bold mb-8 text-center">2. 설문 조사 결과</h2>
+            <p class="text-center mb-6 text-gray-600">미림마이스터고 뉴미디어디자인과 1학년 5반 학생 18명을 대상으로 생성형 AI 사용 실태를 조사했습니다.</p>
+
+            <div class="section-card mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-center">가장 자주 사용하는 생성형 AI는 무엇인가요? 🤖</h3>
+                <div class="chart-container w-full max-w-md mx-auto h-72 md:h-80 lg:h-96">
+                    <canvas id="mostUsedAiChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-center text-gray-700">1학년 5반 학생 18명 중 대부분(83.3%)이 챗GPT를 가장 자주 사용하는 것으로 나타났습니다. 제미나이와 퍼플렉시티 사용자는 소수였으며, 뤼튼 사용자는 없었습니다.</p>
+            </div>
+
+            <div class="section-card mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-center">선택한 생성형 AI를 얼마나 자주 사용하시나요? 👍🏻</h3>
+                <div class="chart-container w-full max-w-lg mx-auto h-72 md:h-80 lg:h-96">
+                    <canvas id="aiFrequencyChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-center text-gray-700">응답자의 33.3%가 생성형 AI를 매일 사용한다고 답했으며, 일주일에 1~2번 사용하는 보통 사용자도 33.3%를 차지했습니다. 모든 학생이 최소한 가끔은 생성형 AI를 사용하는 것으로 조사되었습니다.</p>
+            </div>
+
+            <div class="section-card">
+                <h3 class="text-xl font-semibold mb-4 text-center">가장 자주 사용하는 AI를 선택한 이유는 무엇인가요? (복수 선택 가능) 🧐</h3>
+                <div class="chart-container w-full max-w-lg mx-auto h-80 md:h-96 lg:h-[450px]">
+                    <canvas id="aiReasonChart"></canvas>
+                </div>
+                <p class="mt-4 text-sm text-center text-gray-700">학생들은 '사용하기 편하고 기능이 쉬워서'(72.2%)를 AI 선택의 가장 큰 이유로 꼽았습니다. '답변이 빠르고 바로 결과를 볼 수 있어서'(44.4%) 또한 중요한 고려 사항이었습니다.</p>
+            </div>
+        </section>
+
+        <section id="conclusion" class="my-8">
+            <div class="section-card bg-supporting-light-blue">
+                <h2 class="text-2xl font-bold mb-6 text-center">3. 주요 발견점 및 요약</h2>
+                <ul class="list-disc list-inside space-y-3 text-sm md:text-base leading-relaxed">
+                    <li>미림마이스터고 1학년 5반 학생들은 생성형 AI를 활발하게 사용하고 있으며, <strong>챗GPT가 압도적인 사용률(83.3%)</strong>을 보였습니다.</li>
+                    <li>AI 선택 시 <strong>'사용 편의성'(72.2%)</strong>이 가장 중요한 기준으로 작용했으며, '답변 속도'(44.4%) 또한 중요하게 고려되었습니다.</li>
+                    <li>전체 응답자 중 <strong>66.6%가 일주일에 1회 이상 AI를 활용</strong>하며, 이 중 절반인 33.3%는 매일 사용하는 것으로 나타나, 생성형 AI가 학생들의 학습 및 정보 탐색 활동에 깊숙이 통합되어 있음을 시사합니다.</li>
+                    <li>모든 학생이 최소한 한 달에 1~2번은 생성형 AI를 사용하고 있어, AI 활용이 보편화되었음을 알 수 있습니다.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-8 mt-12 rounded-t-xl">
+        <p class="text-sm">본 인포그래픽은 미림마이스터고 1학년 5반 2조의 조사 보고서를 기반으로 제작되었습니다.</p>
+        <p class="text-xs mt-2">데이터 출처: 1학년 5반 학생 18명 대상 설문조사 (2025.05.13 ~ 2025.05.20)</p>
+    </footer>
+
+    <script>
+        // Helper function to format labels for Chart.js (handles Korean text wrapping)
+        function formatLabel(value, maxLength = 10) { // Adjusted maxLength for better fit
+            if (typeof value !== 'string') {
+                return value;
+            }
+            if (value.length <= maxLength) {
+                return value;
+            }
+            // Simple split strategy for Korean: try to split by space or just chunk
+            let parts = [];
+            let currentPart = "";
+            for (let i = 0; i < value.length; i++) {
+                currentPart += value[i];
+                if (value[i] === ' ' && currentPart.length > maxLength / 2) { // Prefer space split
+                    parts.push(currentPart.trim());
+                    currentPart = "";
+                } else if (currentPart.length >= maxLength) {
+                    parts.push(currentPart);
+                    currentPart = "";
+                }
+            }
+            if (currentPart) {
+                parts.push(currentPart);
+            }
+            return parts; // Chart.js handles array of strings as new lines
+        }
+
+        // Chart 1: Most Frequently Used Generative AI
+        // const mostUsedAiCtx = document.getElementById('mostUsedAiChart').getContext('2d');
+        new Chart(mostUsedAiCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['챗GPT', '제미나이 (Gemini)', '퍼플렉시티 (Perplexity)', '뤼튼 (Wrtn)'],
+                datasets: [{
+                    label: '사용자 수',
+                    data: [15, 2, 1, 0], // 83.3%, 11.1%, 5.6%, 0%
+                    backgroundColor: [
+                        '#2A62B6', // Primary Blue
+                        '#4ECDC4', // Secondary Teal
+                        '#A9A9A9', // Accent Grey
+                        '#E0F2FE'  // Supporting Light Blue
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { size: 12, family: "'Noto Sans KR', sans-serif" },
+                            padding: 15,
+                             boxWidth: 15,
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { size: 14, family: "'Noto Sans KR', sans-serif", weight: 'bold' },
+                        bodyFont: { size: 12, family: "'Noto Sans KR', sans-serif" },
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    const total = context.dataset.data.reduce((acc, val) => acc + val, 0);
+                                    const percentage = total > 0 ? (context.raw / total * 100).toFixed(1) : 0;
+                                    label += context.raw + '명 (' + percentage + '%)';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Frequency of Generative AI Use
+        // const aiFrequencyCtx = document.getElementById('aiFrequencyChart').getContext('2d');
+        new Chart(aiFrequencyCtx, {
+            type: 'bar',
+            data: {
+                labels: ['매일 사용', '자주 사용 (주 3회 이상)', '보통 사용 (주 1~2회)', '가끔 사용 (월 1~2회)', '거의 사용 안 함'],
+                datasets: [{
+                    label: '학생 수 (명)',
+                    data: [6, 4, 6, 2, 0], // 33.3%, 22.2%, 33.3%, 11.1%, 0%
+                    backgroundColor: [
+                        '#2A62B6', '#437cce', '#6397d7', '#88b3e0', '#A9A9A9'
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1,
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y', // Horizontal bar chart
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '학생 수 (명)',
+                            font: { size: 12, family: "'Noto Sans KR', sans-serif" }
+                        },
+                        ticks: {
+                             font: { size: 11, family: "'Noto Sans KR', sans-serif" }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: { size: 11, family: "'Noto Sans KR', sans-serif" },
+                            callback: function(value, index, ticks) {
+                                // 'value' is the index, 'ticks[index].label' is the actual label string
+                                return formatLabel(ticks[index].label, 12); // Adjust maxLength as needed
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false // Or position: 'top' if preferred
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { size: 14, family: "'Noto Sans KR', sans-serif", weight: 'bold' },
+                        bodyFont: { size: 12, family: "'Noto Sans KR', sans-serif" },
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.x !== null) {
+                                    const totalRespondents = 18; // As per report
+                                    const percentage = (context.raw / totalRespondents * 100).toFixed(1);
+                                    label += context.raw + '명 (' + percentage + '%)';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: Reasons for Choosing AI (Multiple Choice)
+        // const aiReasonCtx = document.getElementById('aiReasonChart').getContext('2d');
+        new Chart(aiReasonCtx, {
+            type: 'bar', // Horizontal bar chart is better for long labels
+            data: {
+                labels: [
+                    '사용하기 편하고 기능이 쉬워서',
+                    '답변이 빠르고 바로 결과를 볼 수 있어서',
+                    '답변 내용이 정확하고 믿을 만해서',
+                    '글, 그림 등 다양한 결과물을 만들 수 있어서',
+                    '기타'
+                ],
+                datasets: [{
+                    label: '응답자 수 (명)',
+                    data: [13, 8, 4, 3, 2], // 72.2%, 44.4%, 22.2%, 16.7%, 11.1%
+                    backgroundColor: [
+                        '#2A62B6', // Primary Blue
+                        '#4ECDC4', // Secondary Teal
+                        '#75b3b0',
+                        '#9cd2cf',
+                        '#A9A9A9'  // Accent Grey
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1,
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y', // This makes it a horizontal bar chart
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: '응답자 수 (명)',
+                            font: { size: 12, family: "'Noto Sans KR', sans-serif" }
+                        },
+                        ticks: {
+                             font: { size: 11, family: "'Noto Sans KR', sans-serif" }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: { size: 11, family: "'Noto Sans KR', sans-serif" },
+                             autoSkip: false, // Ensure all labels are shown
+                             callback: function(value, index, ticks) {
+                                return formatLabel(ticks[index].label, 16); // Adjust maxLength
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { size: 14, family: "'Noto Sans KR', sans-serif", weight: 'bold' },
+                        bodyFont: { size: 12, family: "'Noto Sans KR', sans-serif" },
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.x !== null) {
+                                    const totalRespondents = 18; // 복수응답이므로 %는 각 항목별로 계산
+                                    const percentage = (context.raw / totalRespondents * 100).toFixed(1);
+                                    label += context.raw + '명 (' + percentage + '%)';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+    </body>
+</html>
