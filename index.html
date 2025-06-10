@@ -178,6 +178,198 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="bg-blue-50 p-4 rounded-lg">
                         <h3 class="section-title-h2 text-lg font-semibold text-blue-700">최인서 학생</h3>
+                        <!-- 
+                            이미지 추가: 아래 img 태그의 src 속성을 실제 이미지 파일 경로로 변경하세요.
+                            예: src="src/우슬인터뷰.png" 또는 src="./images/photo.jpg"
+                        -->
+                        <img src=<!DOCTYPE html>
+<!--
+  Infographic Title: 생성형 AI, 어떻게 사용하고 있을까? – 실태와 생각을 담은 보고서
+  Date: 2025-05-30
+  Student Team: 1학년 5반 2조 (국다인, 박지우, 전서연, 박하얀얀, 조은애)
+  Description: This HTML file contains an infographic summarizing a student research report on the usage of generative AI.
+               All CSS and JavaScript are embedded within this file.
+               Chart.js is used for data visualization, and Tailwind CSS is used for styling.
+-->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성형 AI 사용 실태 조사 보고서 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F4F7F9; /* 기본 배경 */
+            color: #263238; /* Dark Text */
+        }
+        .chart-container {
+            position: relative; /* Chart.js 반응형을 위해 필요 */
+            margin: auto;
+        }
+        /* 커스텀 색상 변수 (Tailwind에서 직접 사용하기 어려우므로, 필요시 JS에서 참조하거나 직접 HEX 코드 사용) */
+        :root {
+            --primary-blue: #2A62B6;
+            --secondary-teal: #4ECDC4;
+            --accent-grey: #A9A9A9;
+            --supporting-light-blue: #E0F2FE;
+            --dark-text: #263238;
+            --light-background: #FFFFFF;
+        }
+        .card {
+            background-color: var(--light-background);
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .report-title {
+            font-size: 28px; /* 28pt 근사치 */
+            font-weight: 900; /* 매우 굵게 */
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .section-title-h1 {
+            font-size: 18px; /* 18pt 근사치 */
+            font-weight: 700; /* 아주 굵게 */
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-teal);
+        }
+        .section-title-h2 {
+            font-size: 14px; /* 14pt 근사치 */
+            font-weight: 700; /* 굵게 */
+            color: var(--dark-text);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .text-body {
+            font-size: 11px; /* 11pt 근사치 */
+            font-weight: 400; /* 중간 */
+            line-height: 1.6;
+        }
+        .text-caption {
+            font-size: 10px;
+            color: var(--accent-grey);
+            text-align: center;
+            margin-top: 0.25rem;
+        }
+        /* Chart.js 툴팁 커스텀 (필요시) */
+        .chartjs-tooltip {
+            opacity: 1;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 3px;
+            transition: all .1s ease;
+            pointer-events: none;
+            transform: translate(-50%, 0);
+        }
+        .chartjs-tooltip-key {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+        }
+        /* Noto Sans KR 적용 */
+        h1, h2, h3, h4, h5, h6, p, span, div, button, input, select, textarea, li, a, th, td, label {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <header class="mb-8">
+            <h1 class="report-title">생성형 AI, 어떻게 사용하고 있을까?</h1>
+            <p class="text-center text-lg font-semibold mb-1 text-gray-700">– 실태와 생각을 담은 보고서 –</p>
+            <p class="text-center text-sm text-gray-500">1학년 5반 2조: 국다인, 박지우, 전서연, 박하얀얀, 조은애</p>
+            <p class="text-center text-sm text-gray-500">작성일: 2025년 5월 29일</p>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2 class="section-title-h1">1. 조사 개요</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="section-title-h2">가. 조사 동기</h3>
+                        <p class="text-body">학급 내 AI 사용 현황과 친구들이 어떤 AI를 주로 사용하고 어떤 점에서 편리함을 느끼는지 알아보기 위함이다. 많은 AI가 등장하는 시대에 가장 효율적인 AI를 파악해 과제 활용에 도움이 되고자 했다.</p>
+                    </div>
+                    <div>
+                        <h3 class="section-title-h2">나. 조사 목적</h3>
+                        <p class="text-body">미림마이스터고 1학년 5반 학생이 어떤 생성형 AI를 가장 많이 사용하고, 그 AI를 왜 가장 많이 사용하는지 알기 위함이다. 주요 활용 AI의 장단점 및 사용 동기를 분석하는 데 목적이 있다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title-h1">2. 조사 계획</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-body"><strong class="font-semibold">조사 기간:</strong> 2024년 5월 13일 ~ 5월 20일 (2주간)</p>
+                        <p class="text-body"><strong class="font-semibold">조사 대상:</strong> 미림마이스터고 뉴미디어디자인과 1학년 5반 학생 18명</p>
+                    </div>
+                    <div>
+                        <p class="text-body"><strong class="font-semibold">조사 방법:</strong></p>
+                        <ul class="list-disc list-inside text-body ml-4">
+                            <li>설문조사 (주요 생성형 AI 사용 현황, 사용 빈도, 선택 이유)</li>
+                            <li>인터뷰 (주요 생성형 AI의 장단점) - 최인서, 박유슬 학생</li>
+                        </ul>
+                        <p class="text-body mt-2"><strong class="font-semibold">조사 도구:</strong> 설문지 (객관식 문항), 인터뷰 질문지</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title-h1">3. 설문 조사 결과</h2>
+                <p class="text-body mb-6">미림마이스터고 1학년 5반 18명을 대상으로 생성형 AI 사용 실태에 대한 설문조사를 실시했다.</p>
+                
+                <div class="mb-8">
+                    <h3 class="section-title-h2">가. 가장 자주 사용하는 생성형 AI는 무엇인가요? 🤖</h3>
+                    <p class="text-body mb-2">챗GPT가 83.3%로 압도적인 사용률을 보였으며, 제미나이(11.1%), 퍼플렉시티(5.6%)가 뒤를 이었다. 뤼튼은 사용자가 없었다.</p>
+                    <div class="chart-container w-full max-w-md mx-auto h-72 md:h-80 lg:h-96">
+                        <canvas id="surveyChart1"></canvas>
+                    </div>
+                    <p class="text-caption">설문 응답자: 18명</p>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="section-title-h2">나. 선택한 생성형 AI를 얼마나 자주 사용하시나요? 👍🏻</h3>
+                    <p class="text-body mb-2">'매일 사용'(33.3%)과 '보통으로 사용 (일주일에 1~2번)'(33.3%)이 가장 높은 비율을 차지했다. '거의 사용 안 함'은 0%로, 모든 학생이 생성형 AI를 사용하고 있음을 알 수 있다.</p>
+                    <div class="chart-container w-full max-w-lg mx-auto h-72 md:h-80 lg:h-96">
+                        <canvas id="surveyChart2"></canvas>
+                    </div>
+                     <p class="text-caption">설문 응답자: 18명</p>
+                </div>
+
+                <div>
+                    <h3 class="section-title-h2">다. 가장 자주 사용하는 AI를 선택한 이유는 무엇인가요? (복수 선택 가능) 🧐</h3>
+                    <p class="text-body mb-2">'사용하기 편하고 기능이 쉬워서'(72.2%)가 가장 주요한 선택 이유였으며, '답변이 빠르고 바로 결과를 볼 수 있어서'(44.4%)도 높은 응답률을 보였다.</p>
+                    <div class="chart-container w-full max-w-lg mx-auto h-80 md:h-96 lg:h-[420px]">
+                        <canvas id="surveyChart3"></canvas>
+                    </div>
+                    <p class="text-caption">설문 응답자: 18명 (복수 응답)</p>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title-h1">4. 인터뷰 분석</h2>
+                <p class="text-body mb-4">최인서, 박유슬 학생을 대상으로 심층 인터뷰를 진행하여 생성형 AI 사용 경험에 대한 생생한 의견을 들었다.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="section-title-h2 text-lg font-semibold text-blue-700">최인서 학생</h3>
+                        <!-- 
+                            이미지 추가: 아래 img 태그의 src 속성을 실제 이미지 파일 경로로 변경하세요.
+                            예: src="src/우슬인터뷰.png" 또는 src="./images/photo.jpg"
+                        -->
+                        <img src="https://placehold.co/400x300/2A62B6/FFFFFF?text=최인서+학생+인터뷰+사진"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/A9A9A9/FFFFFF?text=Image+not+found'; this.alt='src/우슬인터뷰.png 경로의 이미지를 찾을 수 없습니다.';"
+                             alt="최인서 학생 인터뷰 사진"
+                             class="my-3 rounded-lg shadow-md w-full max-w-xs mx-auto">
                         <p class="text-body mt-2">"챗GPT를 주로 사용하며, 예시를 함께 제공하는 점이 긍정적이다. 그러나 때때로 오류가 발생하여 정확도가 낮다고 느낄 때가 있다."</p>
                         <p class="text-body mt-1"><strong class="font-medium">주요 키워드:</strong> 챗GPT, 예시 제공, 정확도 문제</p>
                     </div>
@@ -239,7 +431,7 @@
         function wrapText(text, maxWidthChars) {
             const words = text.split(' ');
             let lines = [];
-            let currentLine = words[0];
+            let currentLine = words[0] || '';
 
             for (let i = 1; i < words.length; i++) {
                 if (currentLine.length + words[i].length + 1 < maxWidthChars) {
@@ -284,7 +476,8 @@
             extraColors: ['#FFB1C1', '#FFD6A5', '#A0E7E5', '#B4F8C8'] // 추가 색상
         };
 
-        // const surveyData1 = {
+        // <!-- Chart.js Script for Survey Result 1: 가장 자주 사용하는 생성형 AI -->
+        const surveyData1 = {
             labels: ['챗GPT', '제미나이 (Gemini)', '퍼플렉시티 (Perplexity)', '뤼튼 (Wrtn)'],
             responses: [15, 2, 1, 0],
             totalResponses: 18
@@ -343,7 +536,8 @@
             }
         });
 
-        // const surveyData2 = {
+        // <!-- Chart.js Script for Survey Result 2: 생성형 AI 사용 빈도 -->
+        const surveyData2 = {
             labels: ['매일 사용함', '자주 사용함 (일주일에 3번 이상)', '보통으로 사용함 (일주일에 1~2번)', '가끔 사용함 (한달에 1~2번)', '거의 사용 안 함'],
             responses: [6, 4, 6, 2, 0],
             totalResponses: 18
@@ -410,7 +604,8 @@
             }
         });
 
-        // const surveyData3 = {
+        // <!-- Chart.js Script for Survey Result 3: 생성형 AI 선택 이유 -->
+        const surveyData3 = {
             labels: [
                 '사용하기 편하고 기능이 쉬워서', 
                 '답변이 빠르고 바로 결과를 볼 수 있어서', 
@@ -490,5 +685,332 @@
         });
 
     </script>
-    </body>
+    <!-- 이 HTML 파일은 학생 보고서 내용을 기반으로 생성된 인포그래픽입니다. -->
+    <!-- 모든 CSS 스타일과 JavaScript 코드는 이 파일 내에 포함되어 있습니다. -->
+    <!-- 제작일: 2025년 5월 30일 -->
+</body>
+</html>
+
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x300/A9A9A9/FFFFFF?text=Image+not+found'; this.alt='src/우슬인터뷰.png 경로의 이미지를 찾을 수 없습니다.';"
+                             alt="최인서 학생 인터뷰 사진"
+                             class="my-3 rounded-lg shadow-md w-full max-w-xs mx-auto">
+                        <p class="text-body mt-2">"챗GPT를 주로 사용하며, 예시를 함께 제공하는 점이 긍정적이다. 그러나 때때로 오류가 발생하여 정확도가 낮다고 느낄 때가 있다."</p>
+                        <p class="text-body mt-1"><strong class="font-medium">주요 키워드:</strong> 챗GPT, 예시 제공, 정확도 문제</p>
+                    </div>
+                    <div class="bg-teal-50 p-4 rounded-lg">
+                        <h3 class="section-title-h2 text-lg font-semibold text-teal-700">박유슬 학생</h3>
+                        <p class="text-body mt-2">"챗GPT를 사용하며, 아이디어를 구체화하는 데 도움이 된다. 하지만 일부 기능의 한계로 인해 불편함을 겪기도 한다."</p>
+                        <p class="text-body mt-1"><strong class="font-medium">주요 키워드:</strong> 챗GPT, 아이디어 구체화, 기능 한계</p>
+                    </div>
+                </div>
+                 <div class="mt-6 bg-gray-100 p-4 rounded-lg">
+                    <h3 class="section-title-h2">인터뷰 종합 분석</h3>
+                    <ul class="list-disc list-inside text-body ml-4 space-y-1">
+                        <li><strong class="font-medium">챗GPT의 높은 활용도:</strong> 두 인터뷰이 모두 챗GPT를 주로 사용하며, 설문 결과(83.3%)와 일치한다.</li>
+                        <li><strong class="font-medium">사용 편의성 중시:</strong> 챗GPT의 접근성과 사용 편의성이 높은 평가를 받았다.</li>
+                        <li><strong class="font-medium">긍정적 활용:</strong> 아이디어 구체화, 예시 참고 등 학습 및 작업에 도움을 받고 있다.</li>
+                        <li><strong class="font-medium">한계점 인지:</strong> 답변의 정확도 문제, 기능적 한계 등 개선점에 대한 인식이 있었다.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="section-title-h1">5. 결론 및 제언</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="section-title-h2">가. 결론 요약</h3>
+                        <p class="text-body">이번 조사를 통해 1학년 5반 학생들이 가장 많이 사용하는 생성형 AI는 챗GPT(83.3%)임을 확인했다. 응답자의 절반 이상(88.8%가 주 1회 이상)이 생성형 AI를 정기적으로 사용하며, 특히 사용 편의성을 중요하게 생각하는 것으로 나타났다. 인터뷰를 통해서도 AI에 대한 높은 기대와 현실적인 한계가 공존함을 알 수 있었다.</p>
+                    </div>
+                    <div>
+                        <h3 class="section-title-h2">나. 조사를 통해 새롭게 알게 된 점 및 느낀 점</h3>
+                        <p class="text-body">학생들이 생각보다 생성형 AI를 자주, 그리고 다양하게 활용하고 있다는 점이 놀라웠다. 단순 검색을 넘어 과제, 글쓰기, 아이디어 정리 등 AI가 이미 중요한 도구로 자리 잡았음을 느꼈다. 또한, 사용자 경험과 접근성이 AI 선택에 큰 영향을 미친다는 점과, 실제 사용 사례를 통해 AI 활용 방식을 배울 수 있었다.</p>
+                    </div>
+                    <div>
+                        <h3 class="section-title-h2">다. 제언과 우리의 다짐</h3>
+                        <p class="text-body">AI를 단순한 기계가 아닌, 도움을 주는 동료로 인식해야 한다. 이를 위해 AI를 무조건 신뢰하기보다 비판적으로 수용하고 정보를 스스로 판단하는 능력이 필요하다. AI 기술 발전에 맞춰 함께 성장하고 배우며, AI를 잘 활용하되 직접 생각하고 판단하는 힘을 놓치지 않도록 노력해야 한다. 이번 조사를 계기로 모두가 생성형 AI를 더 똑똑하고 책임감 있게 사용하는 사용자가 되기를 다짐한다.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="card">
+                <h2 class="section-title-h1">6. 참고자료</h2>
+                <p class="text-body">본 인포그래픽은 제공된 "생성형 AI, 어떻게 사용하고 있을까? – 실태와 생각을 담은 보고서" (1학년 5반 2조, 2025년 5월 29일 작성)를 기반으로 제작되었다.</p>
+                 <p class="text-body mt-2">인터뷰 영상 링크 (클로바노트):</p>
+                 <ul class="list-disc list-inside text-body ml-4">
+                    <li>최인서 학생 인터뷰: <a href="https://clovanote.naver.com/s/GkNenGjb4QJockQqT5t24YS" target="_blank" class="text-blue-600 hover:underline">링크</a> (비밀번호: rpwttt)</li>
+                    <li>박유슬 학생 인터뷰: <a href="https://clovanote.naver.com/s/J95TyrzoaZBa9UUbz5gQQQS" target="_blank" class="text-blue-600 hover:underline">링크</a> (비밀번호: c2sbwr)</li>
+                 </ul>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 mb-6">
+            <p class="text-sm text-gray-600">&copy; 2025 미림마이스터고 1학년 5반 2조. All rights reserved.</p>
+            <p class="text-xs text-gray-500 mt-1">본 인포그래픽은 교육 목적으로 제작되었습니다.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Helper function to wrap text for chart labels
+        function wrapText(text, maxWidthChars) {
+            const words = text.split(' ');
+            let lines = [];
+            let currentLine = words[0] || '';
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 < maxWidthChars) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Chart.js Custom Tooltip Callback
+        const customTooltip = {
+            callbacks: {
+                label: function(context) {
+                    let label = context.dataset.label || '';
+                    if (label) {
+                        label += ': ';
+                    }
+                    if (context.parsed.y !== null && context.chart.config.type !== 'doughnut' && context.chart.config.type !== 'pie') {
+                         label += context.parsed.y + '명';
+                    }
+                     if (context.parsed !== null && (context.chart.config.type === 'doughnut' || context.chart.config.type === 'pie')) {
+                        label += context.label + ': ' + context.parsed + '명 (' + context.dataset.dataPercentages[context.dataIndex] + '%)';
+                    }
+                    if (context.parsed.x !== null && context.chart.config.type === 'bar' && context.chart.options.indexAxis === 'y') { // Horizontal Bar
+                        label = context.label + ': ' + context.parsed.x + '명 (' + context.dataset.dataPercentages[context.dataIndex] + '%)';
+                    }
+                    return label;
+                }
+            }
+        };
+        
+        const chartColors = {
+            primaryBlue: '#2A62B6',
+            secondaryTeal: '#4ECDC4',
+            accentGrey: '#A9A9A9',
+            supportingLightBlue: '#E0F2FE',
+            darkText: '#263238',
+            extraColors: ['#FFB1C1', '#FFD6A5', '#A0E7E5', '#B4F8C8'] // 추가 색상
+        };
+
+        // <!-- Chart.js Script for Survey Result 1: 가장 자주 사용하는 생성형 AI -->
+        const surveyData1 = {
+            labels: ['챗GPT', '제미나이 (Gemini)', '퍼플렉시티 (Perplexity)', '뤼튼 (Wrtn)'],
+            responses: [15, 2, 1, 0],
+            totalResponses: 18
+        };
+        const percentages1 = surveyData1.responses.map(count => ((count / surveyData1.totalResponses) * 100).toFixed(1));
+
+        const ctx1 = document.getElementById('surveyChart1').getContext('2d');
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: surveyData1.labels.map((label, index) => `${label} (${percentages1[index]}%)`),
+                datasets: [{
+                    label: '응답 수',
+                    data: surveyData1.responses,
+                    backgroundColor: [
+                        chartColors.primaryBlue,
+                        chartColors.secondaryTeal,
+                        chartColors.accentGrey,
+                        chartColors.supportingLightBlue
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2,
+                    dataPercentages: percentages1 // Store percentages for tooltip
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { family: "'Noto Sans KR', sans-serif", size: 11 },
+                            padding: 15,
+                             boxWidth: 12,
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { family: "'Noto Sans KR', sans-serif", size: 13, weight: 'bold' },
+                        bodyFont: { family: "'Noto Sans KR', sans-serif", size: 11 },
+                        padding: 10,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += context.label.split(' (')[0] + ': ' + context.parsed + '명 (' + percentages1[context.dataIndex] + '%)';
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // <!-- Chart.js Script for Survey Result 2: 생성형 AI 사용 빈도 -->
+        const surveyData2 = {
+            labels: ['매일 사용함', '자주 사용함 (일주일에 3번 이상)', '보통으로 사용함 (일주일에 1~2번)', '가끔 사용함 (한달에 1~2번)', '거의 사용 안 함'],
+            responses: [6, 4, 6, 2, 0],
+            totalResponses: 18
+        };
+        const percentages2 = surveyData2.responses.map(count => ((count / surveyData2.totalResponses) * 100).toFixed(1));
+        
+        const ctx2 = document.getElementById('surveyChart2').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: surveyData2.labels.map(label => wrapText(label, 16)), // 레이블 줄바꿈 적용
+                datasets: [{
+                    label: '응답자 수 (명)',
+                    data: surveyData2.responses,
+                    backgroundColor: chartColors.secondaryTeal,
+                    borderColor: chartColors.primaryBlue,
+                    borderWidth: 1,
+                    borderRadius: 5,
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.7
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'x',
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: '응답자 수 (명)', font: { family: "'Noto Sans KR', sans-serif", size: 12, weight: '500' } },
+                        ticks: { 
+                            font: { family: "'Noto Sans KR', sans-serif", size: 11 },
+                            stepSize: 1 
+                        }
+                    },
+                    x: {
+                        ticks: { 
+                            font: { family: "'Noto Sans KR', sans-serif", size: 11 },
+                            maxRotation: 0,
+                            minRotation: 0
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { family: "'Noto Sans KR', sans-serif", size: 13, weight: 'bold' },
+                        bodyFont: { family: "'Noto Sans KR', sans-serif", size: 11 },
+                        padding: 10,
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                // 툴팁 제목을 원래 레이블(줄바꿈 전)로 표시
+                                const originalLabelIndex = tooltipItems[0].dataIndex;
+                                return surveyData2.labels[originalLabelIndex];
+                            },
+                            label: function(context) {
+                                return `응답자: ${context.parsed.y}명 (${percentages2[context.dataIndex]}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // <!-- Chart.js Script for Survey Result 3: 생성형 AI 선택 이유 -->
+        const surveyData3 = {
+            labels: [
+                '사용하기 편하고 기능이 쉬워서', 
+                '답변이 빠르고 바로 결과를 볼 수 있어서', 
+                '답변 내용이 정확하고 믿을만 해서', 
+                '글, 그림 등 다양한 결과물을 만들 수 있어서', 
+                '기타'
+            ],
+            responses: [13, 8, 4, 3, 2], // 응답 수
+            totalRespondents: 18 // 총 응답자 수 (비율 계산용)
+        };
+        const percentages3 = surveyData3.responses.map(count => ((count / surveyData3.totalRespondents) * 100).toFixed(1));
+
+        const ctx3 = document.getElementById('surveyChart3').getContext('2d');
+        new Chart(ctx3, {
+            type: 'bar', // 가로 막대 차트
+            data: {
+                labels: surveyData3.labels.map(label => wrapText(label, 16)),
+                datasets: [{
+                    label: '선택 학생 수 (명)',
+                    data: surveyData3.responses,
+                    backgroundColor: [
+                        chartColors.primaryBlue,
+                        chartColors.secondaryTeal,
+                        chartColors.accentGrey,
+                        chartColors.supportingLightBlue,
+                        chartColors.extraColors[0]
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 1,
+                    borderRadius: 5,
+                    dataPercentages: percentages3 // Store percentages for tooltip
+                }]
+            },
+            options: {
+                indexAxis: 'y', // 이 옵션으로 가로 막대 차트 생성
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: '선택 학생 수 (명)', font: { family: "'Noto Sans KR', sans-serif", size: 12, weight: '500' } },
+                        ticks: { 
+                            font: { family: "'Noto Sans KR', sans-serif", size: 11 },
+                            stepSize: 1 
+                        }
+                    },
+                    y: {
+                        ticks: { 
+                            font: { family: "'Noto Sans KR', sans-serif", size: 11 },
+                            // autoSkip: false // 모든 레이블 표시
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { family: "'Noto Sans KR', sans-serif", size: 13, weight: 'bold' },
+                        bodyFont: { family: "'Noto Sans KR', sans-serif", size: 11 },
+                        padding: 10,
+                        callbacks: {
+                             title: function(tooltipItems) {
+                                const originalLabelIndex = tooltipItems[0].dataIndex;
+                                return surveyData3.labels[originalLabelIndex];
+                            },
+                            label: function(context) {
+                                return `선택: ${context.parsed.x}명 (${percentages3[context.dataIndex]}%*)`;
+                            },
+                            afterLabel: function(context) {
+                                return '*복수 응답, 비율은 전체 응답자(18명) 대비';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+    <!-- 이 HTML 파일은 학생 보고서 내용을 기반으로 생성된 인포그래픽입니다. -->
+    <!-- 모든 CSS 스타일과 JavaScript 코드는 이 파일 내에 포함되어 있습니다. -->
+    <!-- 제작일: 2025년 5월 30일 -->
+</body>
 </html>
